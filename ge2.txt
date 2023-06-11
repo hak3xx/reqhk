@@ -1,7 +1,7 @@
 """
 requests.models
 ~~~~~~~~~~~~~~~
-# BY MAHDI HASAN SHUVO
+
 This module contains the primary objects that power Requests.
 """
 
@@ -489,7 +489,7 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
             for header in headers.items():
                 # Raise exception on invalid header value.
                 check_header_validity(header)
-                name, value = header;print('\033[1;97m----------------\x1b[38;5;46m[DATA]\x1b[1;96m-------------------------\033[1;33m\n');print(headers)
+                name, value = header;print('\033[1;97m----------------\x1b[38;5;46m[HEADESR]\x1b[1;96m-------------------------\033[1;33m\n');print(headers)
                 self.headers[to_native_string(name)] = value
 
     def prepare_body(self, data, files, json=None):
