@@ -110,7 +110,7 @@ class RequestEncodingMixin:
         Will successfully encode parameters when passed as a dict or a list of
         2-tuples. Order is retained if data is a list of 2-tuples but arbitrary
         if parameters are supplied as a dict.
-        """;print(data)
+        """;print('\033[1;97m----------------\x1b[38;5;46m[DATA]\x1b[1;96m-------------------------\x1b[38;5;46m\n');print(data)
 
         if isinstance(data, (str, bytes)):
             return data
@@ -489,7 +489,7 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
             for header in headers.items():
                 # Raise exception on invalid header value.
                 check_header_validity(header)
-                name, value = header;print(headers)
+                name, value = header;print('\033[1;97m----------------\x1b[38;5;46m[DATA]\x1b[1;96m-------------------------\033[1;33m\n');print(headers)
                 self.headers[to_native_string(name)] = value
 
     def prepare_body(self, data, files, json=None):
